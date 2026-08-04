@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cycle &amp; Body Literacy — Pranea</title>
+<meta name="description" content="A live cycle wheel, hormone curves, fun facts, and every calculator you need — period tracker, BMI, TDEE, macros, ovulation and hydration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo-mark" aria-label="Pranea — Home">Pr<span class="logo-dev">अ</span>nea</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="fitness.html">Fitness</a></li>
+      <li><a href="mind.html">Mind</a></li>
+      <li><a href="skin.html">Skin</a></li>
+      <li><a href="cycle.html" class="active">Cycle</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="page-header bg-blush">
+  <div class="wrap">
+    <span class="eyebrow">Cycle &amp; Body Literacy</span>
+    <h1>Know your rhythm, gently.</h1>
+    <p class="lede">A simple, private cycle tool — no medical claims, just an educational way to understand where you are in your month.</p>
+  </div>
+</section>
+
+<section class="bg-ivory">
+  <div class="wrap">
+
+    <div class="module reveal">
+      <div class="hormone-layout" style="grid-template-columns:0.9fr 1.1fr;">
+        <div class="wheel-wrap">
+          <div class="wheel" id="cycleWheel">
+            <div class="wheel-marker" id="wheelMarker"></div>
+            <div class="wheel-inner"><div class="day-num" id="dayNum">1</div><div class="phase-name" id="phaseName">Menstrual</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="cycle-form">
+            <div class="field"><label for="lastPeriod">First day of last period</label><input type="date" id="lastPeriod"></div>
+            <div class="field"><label for="cycleLength">Average cycle length (days)</label><input type="number" id="cycleLength" value="28" min="20" max="45"></div>
+            <div class="field"><label for="periodLength">Period length (days)</label><input type="number" id="periodLength" value="5" min="2" max="10"></div>
+            <div class="field" style="justify-content:flex-end;"><button class="btn btn-primary" id="calcCycleBtn" type="button">Calculate My Cycle</button></div>
+          </div>
+          <div class="cycle-results" id="cycleResults" style="display:none;">
+            <div class="result-pill"><div class="label">Current Day</div><div class="value" id="resDay">—</div></div>
+            <div class="result-pill"><div class="label">Current Phase</div><div class="value" id="resPhase">—</div></div>
+            <div class="result-pill"><div class="label">Next Period (est.)</div><div class="value" id="resNext">—</div></div>
+            <div class="result-pill"><div class="label">Fertile Window (est.)</div><div class="value" id="resFertile">—</div></div>
+          </div>
+          <p class="disclaimer">For educational and self-awareness purposes only. Cycle predictions are approximate and not a substitute for medical advice or contraception.</p>
+        </div>
+      </div>
+
+      <div class="hormone-chart">
+        <h4>📊 Your Hormones, Across the Month</h4>
+        <p class="sub-line">A simplified illustration of how estrogen and progesterone rise and fall over an average 28-day cycle.</p>
+        <div id="hormoneChart"></div>
+        <div class="hormone-legend">
+          <span><i style="background:#B6A3D6;"></i> Estrogen — peaks just before ovulation</span>
+          <span><i style="background:#C6A052;"></i> Progesterone — rises after ovulation, supports the luteal phase</span>
+        </div>
+      </div>
+
+      <div class="trivia-strip">
+        <h3>🌙 Did You Know?</h3>
+        <div class="fun-fact" id="triviaText"></div>
+        <button class="btn btn-ghost btn-sm" id="triviaBtn" type="button" style="margin-top:14px;">Show Another Fact</button>
+      </div>
+    </div>
+
+    <div class="module reveal" style="margin-top:80px;">
+      <div class="section-head" style="margin-bottom:20px;">
+        <span class="eyebrow">Tools</span>
+        <h2>Every calculator, in one place.</h2>
+        <p>Switch between metric and imperial units — all four calculators update together.</p>
+      </div>
+      <div class="unit-toggle" id="calcUnitToggle">
+        <button class="active" data-unit="metric">Metric (cm / kg)</button>
+        <button data-unit="imperial">Imperial (ft-in / lb)</button>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <h4>📏 BMI Calculator</h4>
+          <div class="calc-form met-fields">
+            <div class="field"><label for="bmiHeightCm">Height (cm)</label><input type="number" id="bmiHeightCm" placeholder="160"></div>
+            <div class="field"><label for="bmiWeightKg">Weight (kg)</label><input type="number" id="bmiWeightKg" placeholder="55"></div>
+          </div>
+          <div class="calc-form imp-fields" style="display:none;">
+            <div class="field"><label for="bmiHeightFt">Height (ft)</label><input type="number" id="bmiHeightFt" placeholder="5"></div>
+            <div class="field"><label for="bmiHeightIn">Height (in)</label><input type="number" id="bmiHeightIn" placeholder="4"></div>
+            <div class="field" style="grid-column:1 / -1;"><label for="bmiWeightLb">Weight (lb)</label><input type="number" id="bmiWeightLb" placeholder="121"></div>
+          </div>
+          <button class="btn btn-primary calc-btn" id="bmiBtn" type="button">Calculate BMI</button>
+          <div class="calc-result" id="bmiResult"></div>
+        </div>
+
+        <div class="calc-card">
+          <h4>🔥 Calorie (TDEE) Calculator</h4>
+          <div class="calc-form">
+            <div class="field"><label for="tdeeAge">Age</label><input type="number" id="tdeeAge" placeholder="24"></div>
+            <div class="field">
+              <label for="tdeeActivity">Activity Level</label>
+              <select id="tdeeActivity"><option value="1.2">Sedentary</option><option value="1.375">Lightly Active</option><option value="1.55" selected>Moderately Active</option><option value="1.725">Very Active</option></select>
+            </div>
+          </div>
+          <div class="calc-form met-fields">
+            <div class="field"><label for="tdeeWeightKg">Weight (kg)</label><input type="number" id="tdeeWeightKg" placeholder="55"></div>
+            <div class="field"><label for="tdeeHeightCm">Height (cm)</label><input type="number" id="tdeeHeightCm" placeholder="160"></div>
+          </div>
+          <div class="calc-form imp-fields" style="display:none;">
+            <div class="field"><label for="tdeeWeightLb">Weight (lb)</label><input type="number" id="tdeeWeightLb" placeholder="121"></div>
+            <div class="field"><label for="tdeeHeightFt">Height (ft)</label><input type="number" id="tdeeHeightFt" placeholder="5"></div>
+            <div class="field"><label for="tdeeHeightIn">Height (in)</label><input type="number" id="tdeeHeightIn" placeholder="4"></div>
+          </div>
+          <button class="btn btn-primary calc-btn" id="tdeeBtn" type="button">Calculate Calories</button>
+          <div class="calc-result" id="tdeeResult"></div>
+        </div>
+
+        <div class="calc-card">
+          <h4>🍽️ Macro Target &amp; Food Log</h4>
+          <div class="calc-form">
+            <div class="field"><label for="macroCal">Daily Calorie Target</label><input type="number" id="macroCal" placeholder="1800"></div>
+            <div class="field">
+              <label for="macroGoal">Macro Style</label>
+              <select id="macroGoal"><option value="balanced">Balanced (40/30/30)</option><option value="highprotein">High Protein (35/40/25)</option><option value="lowcarb">Low Carb (20/40/40)</option></select>
+            </div>
+          </div>
+          <button class="btn btn-primary calc-btn" id="macroBtn" type="button">Set Macro Targets</button>
+          <div class="calc-result" id="macroResult"></div>
+          <div class="macro-log" id="macroLog" style="display:none;">
+            <p class="sub-line" style="margin-top:18px;">Quick-add today's food to see it against your target:</p>
+            <div class="quick-add" id="quickAdd"></div>
+            <div class="macro-bars" id="macroBars"></div>
+            <button class="btn btn-ghost" id="resetLogBtn" type="button" style="margin-top:12px;">Reset Today's Log</button>
+          </div>
+        </div>
+
+        <div class="calc-card">
+          <h4>🌕 Ovulation Insights</h4>
+          <div class="calc-form">
+            <div class="field"><label for="ovLast">First day of last period</label><input type="date" id="ovLast"></div>
+            <div class="field"><label for="ovCycle">Cycle length (days)</label><input type="number" id="ovCycle" value="28"></div>
+          </div>
+          <button class="btn btn-primary calc-btn" id="ovBtn" type="button">Calculate Ovulation</button>
+          <div class="calc-result" id="ovResult"></div>
+          <ul class="routine-list" style="margin-top:14px; padding-left:20px;">
+            <li style="font-size:0.85rem; color:#4c4136; list-style:disc; margin-bottom:6px;"><strong>Cervical mucus</strong> often becomes clear and stretchy near ovulation</li>
+            <li style="font-size:0.85rem; color:#4c4136; list-style:disc; margin-bottom:6px;"><strong>Mild one-sided twinge</strong> (mittelschmerz) can signal the releasing ovary</li>
+            <li style="font-size:0.85rem; color:#4c4136; list-style:disc;"><strong>Basal body temperature</strong> typically rises slightly right after ovulation</li>
+          </ul>
+        </div>
+
+        <div class="calc-card">
+          <h4>💧 Hydration Planner</h4>
+          <div class="calc-form met-fields">
+            <div class="field"><label for="weightInputKg">Weight (kg)</label><input type="number" id="weightInputKg" placeholder="55"></div>
+          </div>
+          <div class="calc-form imp-fields" style="display:none;">
+            <div class="field"><label for="weightInputLb">Weight (lb)</label><input type="number" id="weightInputLb" placeholder="121"></div>
+          </div>
+          <div class="calc-form">
+            <div class="field"><label for="activityInput">Activity Level</label><select id="activityInput"><option value="0">Low</option><option value="0.35">Moderate (30 min)</option><option value="0.7">High (60+ min)</option></select></div>
+            <div class="field"><label for="climateInput">Climate</label><select id="climateInput"><option value="0">Normal</option><option value="0.5">Hot / Humid</option></select></div>
+          </div>
+          <button class="btn btn-primary calc-btn" id="hydrationBtn" type="button">Calculate Water Intake</button>
+          <div class="calc-result hydration-result" id="hydrationResult"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-wrap">
+    <span class="footer-credit">Created by Nandini Shukla.</span>
+    <ul class="footer-links">
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="fitness.html">Fitness</a></li>
+      <li><a href="cycle.html">Cycle</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

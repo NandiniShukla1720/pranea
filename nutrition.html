@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrition &amp; Diet — Pranea</title>
+<meta name="description" content="Indian food, understood by your hormones — 100 macro-friendly recipes, a meal balance checker, hormone-phase eating and seasonal staples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo-mark" aria-label="Pranea — Home">Pr<span class="logo-dev">अ</span>nea</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="nutrition.html" class="active">Nutrition</a></li>
+      <li><a href="fitness.html">Fitness</a></li>
+      <li><a href="mind.html">Mind</a></li>
+      <li><a href="skin.html">Skin</a></li>
+      <li><a href="cycle.html">Cycle</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="page-header bg-blush">
+  <div class="blob b3"></div>
+  <div class="wrap">
+    <span class="eyebrow">Nutrition &amp; Diet</span>
+    <h1>Indian food, understood by your hormones.</h1>
+    <p class="lede">No fad diets — just thoughtful, thali-friendly eating that keeps your blood sugar, gut and hormones in rhythm, built for the way India actually eats.</p>
+  </div>
+</section>
+
+<section class="bg-ivory">
+  <div class="wrap">
+
+    <!-- ---- 1. Meal Balance Checker ---- -->
+    <div class="module reveal">
+      <div class="module-head">
+        <div class="icon i-em">🍛</div>
+        <div><h3>Is Your Meal Balanced?</h3><p>Tick what's on your plate right now and see how it stacks up — no calorie counting required.</p></div>
+      </div>
+      <div class="balance-layout">
+        <div class="balance-checks" id="balanceChecks">
+          <label class="check-pill"><input type="checkbox" value="Whole Grains / Millets" data-color="#C6A052"><span>🌾 Whole Grains / Millets</span></label>
+          <label class="check-pill"><input type="checkbox" value="Protein (Dal, Paneer, Egg, Meat)" data-color="#79A88F"><span>🫘 Protein (dal, paneer, egg, meat)</span></label>
+          <label class="check-pill"><input type="checkbox" value="Vegetables" data-color="#B6A3D6"><span>🥦 Vegetables</span></label>
+          <label class="check-pill"><input type="checkbox" value="Healthy Fats" data-color="#8c6f37"><span>🥜 Healthy Fats (ghee, nuts, seeds)</span></label>
+          <label class="check-pill"><input type="checkbox" value="Dairy / Curd" data-color="#EAE2F6"><span>🥛 Dairy / Curd</span></label>
+          <label class="check-pill"><input type="checkbox" value="Fruit" data-color="#F0E3C2"><span>🍎 Fruit</span></label>
+          <button class="btn btn-primary" id="checkPlateBtn" type="button" style="margin-top:16px;">Check My Plate</button>
+        </div>
+        <div class="balance-visual">
+          <div class="plate" id="plateVisual"><div class="plate-inner"><span id="plateScore">0/6</span></div></div>
+          <p class="plate-feedback" id="plateFeedback">Tick your plate's food groups to see your balance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- 2. Recipe Explorer ---- -->
+    <div class="module reveal">
+      <div class="module-head">
+        <div class="icon i-gold">🥗</div>
+        <div><h3>100 Macro-Friendly Recipes</h3><p>Real, cookable Indian recipes with full ingredients and method — tap any card to open the full recipe.</p></div>
+      </div>
+      <div class="recipe-controls">
+        <input type="text" id="recipeSearch" placeholder="Search recipes — e.g. paneer, poha, dal…">
+        <select id="recipeCat">
+          <option value="All">All Categories</option><option value="Breakfast">Breakfast</option><option value="Mains">Mains</option><option value="Snacks">Snacks</option><option value="Drinks">Drinks</option><option value="Sweets">Sweets</option>
+        </select>
+        <select id="recipeDiet">
+          <option value="All">All Diets</option><option value="Veg">Veg</option><option value="Egg">Egg</option><option value="Non-Veg">Non-Veg</option>
+        </select>
+        <select id="recipeSort">
+          <option value="default">Sort: Default</option><option value="protein">Sort: Highest Protein</option><option value="cal-asc">Sort: Lowest Calories</option>
+        </select>
+      </div>
+      <p class="recipe-count" id="recipeCount">Showing 0 of 0 recipes</p>
+      <div class="grid grid-3" id="recipeGrid"></div>
+      <div style="text-align:center; margin-top:26px;"><button class="btn btn-ghost" id="loadMoreBtn" type="button">Load More Recipes</button></div>
+    </div>
+
+    <!-- ---- 3. Hormone-Friendly Eating ---- -->
+    <div class="module reveal">
+      <div class="module-head">
+        <div class="icon i-lav">🌸</div>
+        <div><h3>Eating With Your Hormones</h3><p>Tap a quadrant of the wheel to see what your body benefits from eating in that phase — with a full sample day.</p></div>
+      </div>
+      <div class="hormone-layout">
+        <div class="hormone-wheel" id="hormoneWheel" style="background:conic-gradient(from 0deg,#C6A052 0deg 90deg,#79A88F 90deg 180deg,#B6A3D6 180deg 270deg,#a9876b 270deg 360deg);">
+          <div class="hormone-wheel-inner"><span style="font-family:var(--serif); font-size:0.85rem; color:#5c5041;">Tap a<br>phase</span></div>
+          <button class="hw-btn active" data-phase="Menstrual" style="top:0; left:50%; transform:translate(-50%,-50%); background:#C6A052;">🩸</button>
+          <button class="hw-btn" data-phase="Follicular" style="top:50%; left:100%; transform:translate(-50%,-50%); background:#79A88F;">🌱</button>
+          <button class="hw-btn" data-phase="Ovulatory" style="top:100%; left:50%; transform:translate(-50%,-50%); background:#B6A3D6;">☀️</button>
+          <button class="hw-btn" data-phase="Luteal" style="top:50%; left:0; transform:translate(-50%,-50%); background:#a9876b;">🌙</button>
+        </div>
+        <div class="phase-panel" id="phasePanel"></div>
+      </div>
+
+      <div class="seed-cycling">
+        <h4>🌰 Seed Cycling — Tracked</h4>
+        <p class="seed-science">Seed cycling is a food-based practice of rotating specific seeds across your cycle to support estrogen dominance in the first half and progesterone support in the second — the lignans in flax and sesame are thought to help modulate estrogen metabolism, while the zinc in pumpkin and selenium in sunflower seeds support progesterone production. Evidence is still emerging, but the seeds themselves are nutrient-dense regardless.</p>
+        <div class="seed-cols">
+          <div class="seed-col"><strong>Phase 1 · Days 1–14 (Menstrual + Follicular)</strong><span>1 tbsp Flaxseed + 1 tbsp Pumpkin Seed daily</span></div>
+          <div class="seed-col"><strong>Phase 2 · Days 15–28 (Ovulatory + Luteal)</strong><span>1 tbsp Sesame Seed + 1 tbsp Sunflower Seed daily</span></div>
+        </div>
+        <p class="sub-line" style="margin-top:20px;">Tap each day below as you go — build your streak across the cycle:</p>
+        <div class="seed-cal" id="seedCal"></div>
+        <p class="seed-streak" id="seedStreak"></p>
+      </div>
+    </div>
+
+    <!-- ---- 4. Seasonal Staples ---- -->
+    <div class="module reveal">
+      <div class="module-head">
+        <div class="icon i-em">🌾</div>
+        <div><h3>What To Eat, By Season &amp; Region</h3><p>India's climate and cuisines vary widely — pick your season and region for foods to embrace and foods to ease back on.</p></div>
+      </div>
+      <div class="season-controls">
+        <select id="seasonSelect"><option value="Summer">☀️ Summer</option><option value="Monsoon">🌧️ Monsoon</option><option value="Winter">❄️ Winter</option><option value="Spring/Autumn">🍃 Spring / Autumn</option></select>
+        <select id="regionSelect"><option value="North India">North India</option><option value="South India">South India</option><option value="East India">East India</option><option value="West India">West India</option><option value="Northeast India">Northeast India</option></select>
+      </div>
+      <div class="season-result" id="seasonResult"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="recipe-overlay" id="recipeOverlay"></div>
+<div class="recipe-detail" id="recipeDetail"></div>
+
+<footer>
+  <div class="wrap footer-wrap">
+    <span class="footer-credit">Created by Nandini Shukla.</span>
+    <ul class="footer-links">
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="fitness.html">Fitness</a></li>
+      <li><a href="cycle.html">Cycle</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/recipes.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>

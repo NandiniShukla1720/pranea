@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitness &amp; Exercise — Pranea</title>
+<meta name="description" content="A yoga-first, illustrated asana library synced to your cycle, plus strength and recovery routines built for the female body.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo-mark" aria-label="Pranea — Home">Pr<span class="logo-dev">अ</span>nea</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="fitness.html" class="active">Fitness</a></li>
+      <li><a href="mind.html">Mind</a></li>
+      <li><a href="skin.html">Skin</a></li>
+      <li><a href="cycle.html">Cycle</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="page-header bg-blush">
+  <div class="blob b1" style="top:-100px; right:-80px; width:300px; height:300px; background:radial-gradient(circle,var(--lavender-soft),var(--lavender));"></div>
+  <div class="wrap">
+    <span class="eyebrow">Fitness &amp; Exercise</span>
+    <h1>Movement that respects your cycle.</h1>
+    <p class="lede">A yoga-first approach layered with strength and recovery — built for energy that ebbs and flows, not a flat weekly template.</p>
+  </div>
+</section>
+
+<section class="bg-ivory">
+  <div class="wrap">
+    <div class="module reveal" style="padding-top:0;">
+      <div class="module-head" style="margin-bottom:22px;">
+        <div class="icon i-lav">🧘🏽‍♀️</div>
+        <div><h3>Yoga-First Asana Library</h3><p>14 poses, each illustrated with steps and a note on exactly how it helps the female body — filter by the cycle phase you're in.</p></div>
+      </div>
+      <div class="phase-tabs" id="asanaTabs">
+        <button class="phase-tab active" data-phase="All" style="--tab-color:#2A241E;">All Poses</button>
+        <button class="phase-tab" data-phase="Menstrual" style="--tab-color:#C6A052;">🩸 Menstrual</button>
+        <button class="phase-tab" data-phase="Follicular" style="--tab-color:#79A88F;">🌱 Follicular</button>
+        <button class="phase-tab" data-phase="Ovulatory" style="--tab-color:#B6A3D6;">☀️ Ovulatory</button>
+        <button class="phase-tab" data-phase="Luteal" style="--tab-color:#a9876b;">🌙 Luteal</button>
+      </div>
+      <div class="grid grid-3" id="asanaGrid" style="margin-top:30px;"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-blush">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Strength &amp; Recovery</span>
+      <h2>Why lifting matters for you, specifically.</h2>
+      <p>Strength training isn't just aesthetic — for women, it's directly tied to bone density, metabolic health and hormonal resilience.</p>
+    </div>
+
+    <div class="info-accordion reveal">
+      <div class="info-accordion-head"><span>💪 Strength Basics — Why It Matters &amp; A Sample Routine</span><span class="plus">+</span></div>
+      <div class="info-accordion-body">
+        <p><strong>Why it matters for women:</strong> Estrogen plays a protective role in bone density — resistance training builds bone mass while estrogen is available, creating a buffer for the years ahead. It also improves insulin sensitivity, which can ease PCOS-related symptoms, and builds the muscular support your pelvic floor and lower back rely on through every phase.</p>
+        <p><strong>15-Minute Beginner Circuit · 2–3x / week</strong></p>
+        <ul>
+          <li><strong>Bodyweight Squats</strong> — 3 sets × 12 reps — builds lower-body and pelvic-floor strength</li>
+          <li><strong>Wall or Knee Push-Ups</strong> — 3 sets × 8–10 reps — upper-body and core strength</li>
+          <li><strong>Glute Bridges</strong> — 3 sets × 15 reps — strengthens glutes and lower back</li>
+          <li><strong>Standing Resistance-Band Rows</strong> — 3 sets × 12 reps — supports posture</li>
+          <li><strong>Dead Bug</strong> — 3 sets × 10 reps/side — deep core stability</li>
+        </ul>
+        <p><strong>Progressing further (intermediate):</strong> Add light dumbbells to squats and rows, introduce a Romanian deadlift for the hamstrings and glutes, and build up to a full push-up. Aim to increase reps or resistance every 2–3 weeks, not every session.</p>
+        <p style="font-size:0.8rem; color:#8a7c6a;">Best done in the follicular or ovulatory phase, when energy and strength typically peak — you can still train in luteal or menstrual weeks, just expect to lift a little lighter.</p>
+      </div>
+    </div>
+
+    <div class="info-accordion reveal">
+      <div class="info-accordion-head"><span>🌿 Recovery &amp; Mobility — Why It Matters &amp; A Sample Routine</span><span class="plus">+</span></div>
+      <div class="info-accordion-body">
+        <p><strong>Why it matters for women:</strong> Recovery isn't laziness — it's when muscle actually rebuilds and your nervous system resets. This matters even more across a cycle, since the luteal and menstrual phases naturally lower your tolerance for high-intensity training. Respecting that rhythm reduces injury risk and burnout.</p>
+        <p><strong>10-Minute Mobility Reset · Daily or as needed</strong></p>
+        <ul>
+          <li><strong>Neck &amp; Shoulder Rolls</strong> — 1 minute — releases desk-day tension</li>
+          <li><strong>Cat-Cow Flow</strong> — 8 rounds — mobilises the spine, eases cramps</li>
+          <li><strong>Seated Forward Fold</strong> — hold 60 seconds — calms the nervous system</li>
+          <li><strong>Figure-4 Hip Stretch</strong> — 45 seconds/side — releases hip and glute tightness</li>
+          <li><strong>Legs-Up-the-Wall</strong> — 5 minutes — reduces bloating and lower-body swelling</li>
+        </ul>
+        <p><strong>Signs you need a recovery day:</strong> unusually sore muscles beyond 48 hours, poor sleep, irritability, or a resting heart rate noticeably higher than usual. All are signals to swap strength training for mobility work.</p>
+        <p style="font-size:0.8rem; color:#8a7c6a;">Ideal during menstrual or luteal phases, or any low-energy day — this is maintenance, not a step backward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-wrap">
+    <span class="footer-credit">Created by Nandini Shukla.</span>
+    <ul class="footer-links">
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="fitness.html">Fitness</a></li>
+      <li><a href="cycle.html">Cycle</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mental Health &amp; Wellness — Pranea</title>
+<meta name="description" content="A quiet moment built into your day — journaling prompts, mood check-ins, guided breathing, sleep support and grounding techniques.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo-mark" aria-label="Pranea — Home">Pr<span class="logo-dev">अ</span>nea</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="fitness.html">Fitness</a></li>
+      <li><a href="mind.html" class="active">Mind</a></li>
+      <li><a href="skin.html">Skin</a></li>
+      <li><a href="cycle.html">Cycle</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="page-header bg-blush">
+  <div class="wrap">
+    <span class="eyebrow">Mental Health &amp; Wellness</span>
+    <h1>A quiet moment, built into your day.</h1>
+    <p class="lede">No overwhelming trackers — just a handful of small, real tools for the mind.</p>
+  </div>
+</section>
+
+<section class="bg-ivory">
+  <div class="wrap">
+
+    <div class="module reveal">
+      <div class="mind-grid">
+        <div class="mind-card">
+          <h3>✍️ Journaling Prompt</h3>
+          <div class="prompt-box" id="promptBox">What is one thing my body did well for me today?</div>
+          <button class="prompt-btn" id="promptBtn">New Prompt</button>
+        </div>
+        <div class="mind-card" style="background:var(--gold-soft);">
+          <h3>🌤️ How Are You, Really?</h3>
+          <p class="sub-line">Tap the feeling closest to today:</p>
+          <div class="mood-row" id="moodRow">
+            <button class="mood-btn">😌</button>
+            <button class="mood-btn">😔</button>
+            <button class="mood-btn">😤</button>
+            <button class="mood-btn">😴</button>
+            <button class="mood-btn">🥹</button>
+          </div>
+          <div class="mood-suggestion" id="moodSuggestion">Your check-in will show a gentle suggestion here.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="mind-card" style="background:var(--emerald-soft); max-width:520px; margin:0 auto;">
+        <h3 style="text-align:center;">🌬️ Guided Breathing</h3>
+        <div class="breathe-mode-row">
+          <button class="mode-btn active" data-mode="relax">Relaxing (4-2-4)</button>
+          <button class="mode-btn" data-mode="box">Box Breathing (4-4-4-4)</button>
+        </div>
+        <div class="breathe-wrap">
+          <div class="breathe-svg-wrap">
+            <svg viewBox="0 0 200 200" width="180" height="180">
+              <g>
+                <ellipse class="lotus-petal" cx="100" cy="60" rx="16" ry="40" fill="#B6A3D6" opacity="0.85"/>
+                <ellipse class="lotus-petal" cx="100" cy="60" rx="16" ry="40" fill="#B6A3D6" opacity="0.85" transform="rotate(45 100 100)"/>
+                <ellipse class="lotus-petal" cx="100" cy="60" rx="16" ry="40" fill="#C6A052" opacity="0.75" transform="rotate(90 100 100)"/>
+                <ellipse class="lotus-petal" cx="100" cy="60" rx="16" ry="40" fill="#B6A3D6" opacity="0.85" transform="rotate(135 100 100)"/>
+                <ellipse class="lotus-petal" cx="100" cy="60" rx="16" ry="40" fill="#B6A3D6" opacity="0.85" transform="rotate(180 100 100)"/>
+                <ellipse class="lotus-petal" cx="100" cy="60" rx="16" ry="40" fill="#C6A052" opacity="0.75" transform="rotate(225 100 100)"/>
+                <ellipse class="lotus-petal" cx="100" cy="60" rx="16" ry="40" fill="#B6A3D6" opacity="0.85" transform="rotate(270 100 100)"/>
+                <ellipse class="lotus-petal" cx="100" cy="60" rx="16" ry="40" fill="#C6A052" opacity="0.75" transform="rotate(315 100 100)"/>
+                <circle cx="100" cy="100" r="22" fill="#79A88F"/>
+              </g>
+            </svg>
+            <div class="breathe-label" id="breatheLabel">Breathe</div>
+          </div>
+          <button class="prompt-btn" id="breatheBtn">Start Breathing</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="module reveal">
+      <div class="mind-grid">
+        <div class="mind-card sleep-quiz" style="background:var(--gold-soft);">
+          <h3>😴 Sleep Habit Checklist</h3>
+          <ul class="sleep-list" id="sleepList">
+            <li><input type="checkbox"><span>Dimmed lights and put screens away 30 minutes before bed</span></li>
+            <li><input type="checkbox"><span>Kept a consistent wake-time today</span></li>
+            <li><input type="checkbox"><span>Avoided caffeine after 4pm</span></li>
+            <li><input type="checkbox"><span>Had a warm, familiar wind-down ritual (milk, chamomile, journaling)</span></li>
+            <li><input type="checkbox"><span>Room was cool, dark and quiet at bedtime</span></li>
+          </ul>
+          <p class="sleep-score" id="sleepScore"></p>
+        </div>
+        <div class="mind-card" style="background:var(--lavender-soft);">
+          <h3>🌾 5-4-3-2-1 Grounding</h3>
+          <p class="sub-line">A quick technique for anxious or overwhelmed moments — press through each step slowly.</p>
+          <div class="grounding-steps">
+            <div class="grounding-step">👀 Name <strong>5 things</strong> you can see around you right now.</div>
+            <div class="grounding-step">✋ Name <strong>4 things</strong> you can physically feel or touch.</div>
+            <div class="grounding-step">👂 Name <strong>3 things</strong> you can hear.</div>
+            <div class="grounding-step">👃 Name <strong>2 things</strong> you can smell.</div>
+            <div class="grounding-step">👅 Name <strong>1 thing</strong> you can taste.</div>
+          </div>
+          <button class="prompt-btn" id="groundingBtn" style="margin-top:14px;">Start Grounding Exercise</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-wrap">
+    <span class="footer-credit">Created by Nandini Shukla.</span>
+    <ul class="footer-links">
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="fitness.html">Fitness</a></li>
+      <li><a href="cycle.html">Cycle</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
